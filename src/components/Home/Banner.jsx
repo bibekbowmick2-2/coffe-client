@@ -2,7 +2,7 @@
 const Banner = () => {
     return (
         <div className="w-full">
-            <div className="w-full rancho relative">
+            <div className="w-full rancho-regular relative">
                 <img src="../../../images/more/3.png" alt="" />
                 <div className="w-full lg:w-1/2 absolute bottom-0 right-0 lg:bottom-5 p-5 lg:p-20 space-y-1">
                     <h1 className="font-bold text-lg lg:text-4xl">Would you like a Cup of Delicious Coffee?</h1>

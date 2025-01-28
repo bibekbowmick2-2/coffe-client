@@ -2,10 +2,11 @@ import CoffeeContainer from "./CoffeeContainer/CoffeeContainer";
 
 const MainBody = () => {
     return (
-        <div className="w-full h-[2100px] lg:h-[1500px] relative rancho">
-            <div className="w-full h-full"><img className="w-full h-full" src="../../../images/more/13.jpg" alt="" /></div>
-            <div className=""><img src="" alt="" className="w-full" /></div>
-            <div className="w-full text-[#331A15] absolute top-0">
+        <div className="w-full h-[2100px] lg:h-[1500px] bg-gray-50 relative rancho-regular">
+            <div className="w-[100px] h-[100px] lg:w-[300px] lg:h-[300px] absolute top-10"><img src="../../../images/more/4.png" alt="" className="w-full" /></div>
+            <div className="w-[300px] h-[300px] absolute top-1/2 right-0"><img src="../../../images/more/5.png" alt="" className="w-full" /></div>
+           
+            <div className="w-full text-[#331A15] rancho-regular">
                 <section id='Our Popular Product' >
                     <div className="text-center p-10 lg:p-[100px] space-y-3">
                         <p>--- Sip & Savor ---</p>
