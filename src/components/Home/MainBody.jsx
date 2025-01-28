@@ -1,5 +1,5 @@
 import CoffeeContainer from "./CoffeeContainer/CoffeeContainer";
-
+import { NavLink } from "react-router-dom";
 const MainBody = () => {
     return (
         <div className="w-full h-[2100px] lg:h-[1500px] bg-gray-50 relative rancho-regular">
@@ -11,7 +11,7 @@ const MainBody = () => {
                     <div className="text-center p-10 lg:p-[100px] space-y-3">
                         <p>--- Sip & Savor ---</p>
                         <h1 className="font-bold text-lg lg:text-4xl">Our Popular Products</h1>
-                        <button className="btn bg-[#E3B577]">Add Coffee</button>
+                        <NavLink to="/addcoffee"><button className="btn bg-[#E3B577]">Add Coffee</button></NavLink>
                     </div>
                     <CoffeeContainer></CoffeeContainer>
                 </section>
