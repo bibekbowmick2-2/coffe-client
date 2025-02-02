@@ -2,11 +2,11 @@ import CoffeeContainer from "./CoffeeContainer/CoffeeContainer";
 import { NavLink } from "react-router-dom";
 const MainBody = () => {
     return (
-        <div className="w-full h-[2100px] lg:h-[1500px] bg-gray-50 relative rancho-regular">
-            <div className="w-[100px] h-[100px] lg:w-[300px] lg:h-[300px] absolute top-10"><img src="../../../images/more/4.png" alt="" className="w-full" /></div>
-            <div className="w-[300px] h-[300px] absolute top-1/2 right-0"><img src="../../../images/more/5.png" alt="" className="w-full" /></div>
+        <div className="w-full  bg-gray-50 relative rancho-regular">
+            <div className="w-[100px] h-[100px] lg:w-[300px] lg:h-[300px] absolute top-10 z-0"><img src="../../../images/more/4.png" alt="" className="w-full z-0" /></div>
+            <div className="w-[300px] h-[300px] absolute bottom-[205px] lg:top-3/4 right-0 z-0"><img src="../../../images/more/5.png" alt="" className="w-full z-0" /></div>
            
-            <div className="w-full text-[#331A15] rancho-regular">
+            <div className="w-full text-[#331A15] rancho-regular z-10">
                 <section id='Our Popular Product' >
                     <div className="text-center p-10 lg:p-[100px] space-y-3">
                         <p>--- Sip & Savor ---</p>

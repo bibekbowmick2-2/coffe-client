@@ -1,5 +1,41 @@
-
+import Swal from 'sweetalert2'
 const AddCoffee = () => {
+    const handleSubmitForm = (event) =>{
+     event.preventDefault();
+     const form = event.target;
+
+     const name = form.coffeename.value;
+     const supplier = form.supplier.value;
+     const category = form.category.value;
+     const coffeeChef =form.coffeeChef.value;
+     const taste = form.taste.value;
+     const details =form.details.value;
+     const photo = form.photo.value;
+     
+     const addCoffee = { name, supplier, category, coffeeChef, taste, details, photo};
+     console.log(addCoffee);
+
+     fetch('http://localhost:5000/coffee',{
+        method : "POST",
+        headers :{
+            "Content-type":"application/json"
+        },
+        body:JSON.stringify(addCoffee)
+        }
+     )
+     .then(res => res.json())
+     .then(data => {
+        console.log(data);
+        if(data.insertedId){
+            Swal.fire({
+                title: "Coffee Added Successfully!!",
+                icon: "success",
+                draggable: true
+              });
+        }
+        form.reset();
+     })
+    }
     return (
         <div className=" bg-gray-100 bg-[url('../../../images/more/11.png')]  text-[#331A15] py-[100px]">
             <div className="w-11/12 lg:w-3/4 mx-auto bg-[#F4F3F0] p-10">
@@ -7,7 +43,7 @@ const AddCoffee = () => {
                     <h1 className="font-bold text-lg lg:text-4xl">Add New Coffee</h1><br />
                     <p>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
                 </div>
-                <form onSubmit={() => { }}>
+                <form onSubmit={handleSubmitForm}>
                     <div className="w-11/12 mx-auto flex flex-col justify-between lg:flex-row gap-5">
                         <div className="w-full lg:w-1/2">
                             <label>Name</label><br />
