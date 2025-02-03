@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import img15 from "../../../images/more/15.jpg"
+import logo1 from "../../../images/more/logo1.png"
 const Header = () => {
     const link = <>
         <Link to="/users"><button className="btn btn-xs lg:btn-lg bg-[#E3B577]">Users</button></Link>
@@ -6,7 +8,7 @@ const Header = () => {
     </>
     return (
         <>
-            <div className="navbar w-full h-[120px] relative bg-[url(../../../images/more/15.jpg)]">
+           <div className={`navbar w-full h-[120px] relative bg-[url(${img15})]`}>
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -31,7 +33,7 @@ const Header = () => {
                     </div>
                     <div className="flex items-center justify-center">
                         <div className="w-[90px] h-[90px] hidden lg:block">
-                            <img className="w-full h-full" src="../../../images/more/logo1.png" alt="" />
+                            <img className="w-full h-full" src={logo1} alt="" />
                         </div>
                         <a className="btn btn-ghost rancho font-bold text-xl lg:text-3xl">Espresso Emporium</a>
                     </div>

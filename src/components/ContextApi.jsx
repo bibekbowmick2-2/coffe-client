@@ -22,7 +22,7 @@ export const ApiProvider = ({ children }) => {
   }
 
   useEffect(()=>{
-   fetch('http://localhost:5000/coffee')
+   fetch('https://coffee-store-server-h9ozytwpt-syeda-fairooz-nawals-projects.vercel.app/coffee')
    .then(res => res.json()) 
    .then(data => setCoffee(data))
   },[CoffeeCollection])

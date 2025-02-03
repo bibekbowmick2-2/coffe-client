@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ContextApi } from "../ContextApi";
-
-
+import { Link } from "react-router-dom";
+import login from "../../../images/more/login.jpg"
 const SignIn = () => {
 
     const { signInUser } = useContext(ContextApi);
@@ -20,7 +20,7 @@ const SignIn = () => {
 
                 const lastSignInTime = result?.user?.metadata?.lastSignInTime;
                 const loginInfo = { email, lastSignInTime };
-                fetch(`http://localhost:5000/users`, {
+                fetch(`https://coffee-store-server-h9ozytwpt-syeda-fairooz-nawals-projects.vercel.app/users`, {
                     method: "PATCH",
                     headers: {
                         "Content-type": "application/json",
@@ -39,7 +39,7 @@ const SignIn = () => {
     }
     return (
         <div>
-            <div className="hero lg:justify-start lg:items-center bg-[url(../../../images/more/login.jpg)] min-h-screen">
+            <div className={`hero lg:justify-start lg:items-center bg-[url(${login})] min-h-screen`}>
                 <div className="hero-content bg-[#686362a0] max-w-sm lg:max-w-xl flex-col border-2 border-gray-500 rounded-2xl">
                     <div className="text-center">
                         <h1 className="text-5xl font-bold">Login now!</h1>
@@ -64,6 +64,11 @@ const SignIn = () => {
                             <div className="form-control mt-6">
                                 <button className="btn bg-red-950 hover:border-2 hover:border-gray-100 ">Login</button>
                             </div>
+                            <div className="flex items-center">
+                                <p>New to Coffee Store? Register Now</p>
+                                <Link to="/signup"><button className="btn btn-xs bg-red-950">Registration</button></Link>
+                            </div>
+
                         </form>
                     </div>
                 </div>

@@ -23,7 +23,7 @@ const User = () => {
                   });
     }
     const handleDelete = (id) =>{
-        fetch(`http://localhost:5000/users/${id}`,{
+        fetch(`https://coffee-store-server-h9ozytwpt-syeda-fairooz-nawals-projects.vercel.app/users/${id}`,{
             method:"DELETE",
         })
         .then(res => res.json())
