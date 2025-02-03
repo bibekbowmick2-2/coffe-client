@@ -30,7 +30,7 @@ const Coffee = ({ singlecoffee }) => {
     }
     const handleDelete = (_id) =>{
         console.log("deleted id",_id);
-        fetch(`https://coffee-store-server-h9ozytwpt-syeda-fairooz-nawals-projects.vercel.app/coffee/${_id}`, {
+        fetch(`https://coffee-store-server-8n1t8cdjy-syeda-fairooz-nawals-projects.vercel.app/coffee/${_id}`, {
             method: "DELETE"            
         })
         .then(res => res.json())    

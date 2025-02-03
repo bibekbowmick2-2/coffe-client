@@ -23,7 +23,7 @@ const User = () => {
                   });
     }
     const handleDelete = (id) =>{
-        fetch(`https://coffee-store-server-h9ozytwpt-syeda-fairooz-nawals-projects.vercel.app/users/${id}`,{
+        fetch(`https://coffee-store-server-8n1t8cdjy-syeda-fairooz-nawals-projects.vercel.app/users/${id}`,{
             method:"DELETE",
         })
         .then(res => res.json())

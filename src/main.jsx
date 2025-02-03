@@ -30,12 +30,12 @@ const router = createBrowserRouter([
       {
         path: "/updatecoffee/:id",
         element: <UpdateCoffee />,
-        loader: ({params}) => fetch(`https://coffee-store-server-h9ozytwpt-syeda-fairooz-nawals-projects.vercel.app/coffee/${params.id}`)
+        loader: ({params}) => fetch(`https://coffee-store-server-8n1t8cdjy-syeda-fairooz-nawals-projects.vercel.app/coffee/${params.id}`)
       },
       {
         path: "/coffeedetails/:id",
         element: <CoffeeDetails/>,
-        loader: ({params}) => fetch(`https://coffee-store-server-h9ozytwpt-syeda-fairooz-nawals-projects.vercel.app/coffee/${params.id}`)
+        loader: ({params}) => fetch(`https://coffee-store-server-8n1t8cdjy-syeda-fairooz-nawals-projects.vercel.app/coffee/${params.id}`)
       },
       {
         path:"/signin",
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
       {
         path:"/users",
         element:<User></User>,
-        loader: () => fetch('https://coffee-store-server-h9ozytwpt-syeda-fairooz-nawals-projects.vercel.app/users')
+        loader: () => fetch('https://coffee-store-server-8n1t8cdjy-syeda-fairooz-nawals-projects.vercel.app/users')
       }
 
     ]
