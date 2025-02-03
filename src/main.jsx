@@ -13,6 +13,7 @@ import { ApiProvider } from './components/ContextApi';
 import CoffeeDetails from './components/Home/CoffeeDetails/CoffeeDetails';
 import SignIn from './components/SignIn_SignUp/SignIn';
 import Signup from './components/SignIn_SignUp/Signup';
+import User from './components/Users/User';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
         path:"/signup",
         element:<Signup></Signup>
       },
+      {
+        path:"/users",
+        element:<User></User>,
+        loader: () => fetch('http://localhost:5000/users')
+      }
 
     ]
   },

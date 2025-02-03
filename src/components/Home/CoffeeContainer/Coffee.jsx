@@ -1,7 +1,7 @@
 import { FaEye } from "react-icons/fa6";
 import { FaPencilAlt } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
-import { NavLink,Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Swal from 'sweetalert2'
 import PropTypes from 'prop-types';
 import { useContext } from "react";
@@ -45,8 +45,8 @@ const Coffee = ({ singlecoffee }) => {
     }
     // 
     return (
-        <div className="bg-[#ECEAE3] flex flex-col lg:flex-row justify-center lg:justify-between  rounded-xl p-9 rancho">
-            <div className="w-[200px] h-[200px]"><img className="w-full h-full" src={photo} alt={name} /></div>
+        <div className="bg-[#ECEAE3] flex flex-col lg:flex-row justify-center lg:justify-between space-x-3 rounded-xl p-9 rancho ">
+            <div className="w-[200px] h-[200px] "><img className="w-full h-full" src={photo} alt={name} /></div>
             <div className="w-[200px] flex justify-center items-center">
                 <div className="w-full flex flex-col text-lg">
                     <div className=""> <p className="rancho">Name: {name}   </p></div>

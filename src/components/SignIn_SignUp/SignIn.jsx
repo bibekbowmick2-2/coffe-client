@@ -1,6 +1,42 @@
+import { useContext } from "react";
+import { ContextApi } from "../ContextApi";
 
 
 const SignIn = () => {
+
+    const { signInUser } = useContext(ContextApi);
+    const handleLogin = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+        signInUser(email, password)
+            .then((result) => {
+                console.log(result.user);
+                form.reset();
+
+                // update last login time
+
+                const lastSignInTime = result?.user?.metadata?.lastSignInTime;
+                const loginInfo = { email, lastSignInTime };
+                fetch(`http://localhost:5000/users`, {
+                    method: "PATCH",
+                    headers: {
+                        "Content-type": "application/json",
+                    },
+                    body: JSON.stringify(loginInfo)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                    })
+            })
+            .catch((error) => {
+                console.log(error.message)
+            });
+
+    }
     return (
         <div>
             <div className="hero lg:justify-start lg:items-center bg-[url(../../../images/more/login.jpg)] min-h-screen">
@@ -9,18 +45,18 @@ const SignIn = () => {
                         <h1 className="text-5xl font-bold">Login now!</h1>
                     </div>
                     <div className="card w-full max-w-sm shrink-0 shadow-2xl ">
-                        <form className="card-body">
+                        <form onSubmit={handleLogin} className="card-body">
                             <div className="form-control">
                                 <label className="label text-lg font-bold">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" placeholder="email" className="input bg-[#686362a0] input-bordered" required />
+                                <input type="email" name="email" placeholder="email" className="input bg-[#686362a0] input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label text-lg font-bold">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" placeholder="password" className="input bg-[#686362a0] input-bordered" required />
+                                <input type="password" name="password" placeholder="password" className="input bg-[#686362a0] input-bordered" required />
                                 <label className="label text-lg font-bold">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
